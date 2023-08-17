@@ -18,8 +18,9 @@ export class UsersController {
     return await this.usersService.signUp(body);
   }
 
-  @Post('login')
+  @Post('/login')
   logIn(@Body() data: LoginRequestDto) {
+    console.log('request received!');
     return this.authService.jwtLogin(data);
   }
 }
